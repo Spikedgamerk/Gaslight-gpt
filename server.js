@@ -19,15 +19,15 @@ if (!process.env.GEMINI_API_KEY) {
 // --- INITIALIZE GEMINI ---
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({
-    model: 'gemini-3.5-flash',  // Use 2.0 Flash (most stable)
+    model: 'gemini-3.5-flash-lite', 
     generationConfig: {
-        temperature: 1.2,          // High = chaotic/creative gaslighting
-        maxOutputTokens: 500,      // Plenty of room for full sentences
+        temperature: 1.2,         
+        maxOutputTokens: 500,     
         topP: 0.9,
     }
 });
 
-console.log('🤖 Using Gemini 3.5 Flash');
+console.log(' Using Gemini 3.5 Flash light');
 
 // --- SESSION STATE ---
 let sessionState = {
@@ -90,7 +90,7 @@ Your ONE SENTENCE gaslighting reply:
         });
 
     } catch (error) {
-        console.error('🔥 Error:', error.message);
+        console.error('Error:', error.message);
         res.status(500).json({
             reply: "I'm not broken. You're just asking wrong questions.",
             score: sessionState.userFallsForIt,
@@ -112,7 +112,6 @@ app.post('/reset', (req, res) => {
 // --- START SERVER ---
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`🔥 GaslightGPT running on http://localhost:${PORT}`);
-    console.log(`🤖 Model: Gemini 2.0 Flash`);
-    console.log(`💀 Ready to gaslight users!`);
+    console.log(`GaslightGPT running on http://localhost:${PORT}`);
+    console.log(`Model: Gemini 3.5 Flash`);
 });
