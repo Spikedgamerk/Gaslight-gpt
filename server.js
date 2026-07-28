@@ -113,5 +113,5 @@ app.post('/reset', (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`GaslightGPT running on http://localhost:${PORT}`);
-    console.log(`Model: Gemini 3.5 Flash`);
+    console.log(`Model: Gemini 3.5 Flash light`);
 });
