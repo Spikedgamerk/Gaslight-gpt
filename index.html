@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GaslightGPT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header with Gaslight Score and Reset Button -->
+        <div class="header">
+            <h1>🧠 GaslightGPT</h1>
+            <div class="stats">
+                <span>Fooled: <span id="foolCount">0</span>x</span>
+                <span>Called Out: <span id="defenseCount">0</span>x</span>
+                <button id="resetBtn" class="reset-btn">🔄 Reset</button>
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chatBox" class="chat-box">
+            <div class="message bot">
+                👋 I know everything. Ask me anything, but I'm probably right and you're probably wrong.
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Ask me something...">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
